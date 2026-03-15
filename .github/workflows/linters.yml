@@ -149,6 +149,8 @@ jobs:
           persist-credentials: false
           sparse-checkout: '*.nix'
           sparse-checkout-cone-mode: false
+      - name: Debug git ls-files
+        run: git sparse-checkout list && exit 1
       - uses: cachix/install-nix-action@2126ae7fc54c9df00dd18f7f18754393182c73cd  # v31.9.1
       - name: Lint Nix files
         run: |
